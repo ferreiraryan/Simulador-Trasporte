@@ -5,13 +5,13 @@ export class TransporteService {
   private linhas: Linha[] = [];
   private passageiros: Passageiro[] = [];
 
-  cadastrarLinha(numero: string, trajeto: string, tipo: TipoLinha = "normal") {
+    cadastrarLinha(numero: string, trajeto: string, tipo: TipoLinha = "normal") {
     const linha = new Linha(numero, trajeto, tipo);
     this.linhas.push(linha);
     return linha;
   }
 
-  listarLinhas() {
+    listarLinhas() {
     return this.linhas;
   }
 
@@ -19,6 +19,9 @@ export class TransporteService {
     const passageiro = new Passageiro(nome, cpf);
     this.passageiros.push(passageiro);
     return passageiro;
+  }
+    listarTodosPassageiros() {
+    return this.passageiros;
   }
 
   atribuirPassageiroALinha(cpf: string, numeroLinha: string) {

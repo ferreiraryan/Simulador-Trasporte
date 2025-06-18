@@ -14,6 +14,10 @@ export const TransporteController = {
     res.json(transporte.listarLinhas());
   },
 
+  ListarTodosPassageiros(req: Request, res: Response) {
+    res.json(transporte.listarTodosPassageiros());
+  },
+
   criarPassageiro(req: Request, res: Response) {
     const { nome, cpf } = req.body;
     const passageiro = transporte.cadastrarPassageiro(nome, cpf);
